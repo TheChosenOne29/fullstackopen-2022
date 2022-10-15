@@ -1,0 +1,26 @@
+title Exercise 0.4
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Server-->Browser: Note: "i want to visit finland!"
+
+note over Browser:
+Sent POST request, request reloads
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTTP-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser:
+JS loaded, requesting JSON
+end note 
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: data.json ([{content: "apple", date: "2022-10-15T07:01:18.116Z"},…]
+
+note over Browser:
+Rendered notes
+end note
